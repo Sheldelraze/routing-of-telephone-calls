@@ -62,15 +62,19 @@ python -m unittest
 
 For this exercise, I'm using the data structure called [`Trie`](https://en.wikipedia.org/wiki/Trie) which has the complexity of creating is `O(M*N*L)` where `M` is the number of operator, `N` is the maximum number of prefix each operator has and `L` is the average length of all phone number, for querying the complexity is `O(L)` which has better scaling compare to the vanilla approach (checking every prefix and see if they match - `O(M*N*L)` again).
 
+2. Other edge cases
 
-2. Regarding memory usage
+- No prefix match for a phone number: I just return `None`
+- 1 phone number query return 2 operators that have the same pricing: The first one to be imported is returned
+
+3. Regarding memory usage
 
 The problem setter notes that all limitations (number of prefixes, maximum pricing,...) are within reason and the whole dataset can be fitted in memory so I won't focus too much on optimizing memory usage.
 
-3. Data validation
+4. Data validation
 
 This is not the main point of the problem so I'm just gonna skip it but if I have to I would probably use some 3rd party library such as `mashmallow`, `pydantic`,... to enforce data type and validator if needed
 
-4. Data consistency - scaling
+5. Data consistency - scaling
 
 Again for this problem they said not to use any database so I'm just reading from file here and could not implement any data update method (unless we update the data and rerun the program again) but in case I do need to develop a solution for that (which can scale as well), I would probably store the whole dataset in an memory database (such as Redis,...) and have another thread to update it if needed.
