@@ -1,4 +1,3 @@
-
 import os
 
 from libs.operator import Operator

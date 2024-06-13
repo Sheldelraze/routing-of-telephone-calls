@@ -4,7 +4,6 @@ from libs.trie import Trie
 
 
 class TestTrie(unittest.TestCase):
-
     def setUp(self):
         self.trie = Trie()
         self.trie.insert("1", 0.9)

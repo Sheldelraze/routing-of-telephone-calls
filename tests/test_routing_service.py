@@ -4,8 +4,8 @@ from libs.operator import Operator
 from libs.operator_repository import OperatorRepository
 from libs.routing_service import RoutingService
 
-class TestRoutingService(unittest.TestCase):
 
+class TestRoutingService(unittest.TestCase):
     def setUp(self):
         self.operator_a = Operator("Operator A")
         self.operator_a.insert_prefix("1", 0.9)
